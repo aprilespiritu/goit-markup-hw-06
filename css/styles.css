@@ -17,10 +17,13 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/* WEBStudio Logo */
+
 .logo {
     font-family: 'Raleway', sans-serif;
     text-decoration: none;
-    color: var(--navy-blue) font-size: 20px;
+    color: var(--navy-blue); 
+    font-size: 18px;
     font-weight: 800;
     line-height: 21px;
     letter-spacing: 0.54px;
@@ -30,6 +33,8 @@ body {
     color: var(--iris)
 }
 
+/* Banner */
+
 .bg-dark {
     background-color: var(--navy-blue);
     color: var(--white);
@@ -37,13 +42,55 @@ body {
     align-items: baseline;
 }
 
+.bg-dark a{
+    color: var(--white);
+}
+
 .bg-contents {
     padding: 101.5px 156px;
 }
 
+
 .socials .bg-socials {
     gap: 16px;
 }
+
+.bg-sub {
+    padding-left: 100px;
+}
+
+.input-sub {
+    width: 264px;
+    height: 40px;
+    background: var(--navy-blue);
+    border: 1px solid white;
+    border-radius: 4px;
+    margin-right: 16px;
+}
+
+.input-sub::placeholder {
+    color: var(--white);
+    padding: 8px 16px;
+}
+
+.sub-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 24px;
+    background-color: var(--iris);
+    color: var(--white);
+    border: 1px solid var(--iris);
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    gap: 16px;
+}
+
+.sub-btn svg {
+    fill: var(--white);
+}
+
+/* Hero Section */
 
 .hero {
     background: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(../images/people-office-1.jpg);
@@ -72,6 +119,182 @@ h1 {
     list-style-type: none;
     justify-content: space-around;
 }
+
+.hero-btn {
+    cursor: pointer;
+    transition-duration: 2s;
+    background-color: var(--iris);
+    border: none;
+    border-radius: 4px;
+    color: var(--white);
+    padding: 16px 32px;
+}
+
+
+.hero-btn:hover {
+    background-color: var(--ocean);
+}
+
+/* Modal */ 
+
+.backdrop {
+    background-color: rgba(46, 47, 66, 0.40);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+    width: 408px;
+    height: 584px;
+    background-color: var(--dairy);
+    border-radius: 4px;
+    padding: 24px;
+}
+
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.close-btn {
+    border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--cloud);
+    color: var(--navy-blue);
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    display: block;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    fill: currentColor;
+    border: 1px solid currentColor;
+}
+
+.contact-label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+    position: relative;
+    color: var(--light-slate);
+}
+
+.form-label {
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    width: 360px;
+    height: 40px;
+    border: 1px solid grey;
+    padding-left: 42px;
+    border-radius: 4px;
+}
+
+.form-icon {
+    position: absolute;
+    top: 55%;
+    left: 15px;
+    fill: var(--navy-blue);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.form-input:focus + .form-icon,
+.form-input:hover + .form-icon {
+    fill: var(--iris);
+}
+
+.form-input:hover,
+.form-input:hover {
+    border: 1px solid var(--iris);
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input-textarea {
+    border: 1px solid var(--grey);
+    border-radius: 4px;
+    transition: 250ms;
+    transition-property: color, border-color, background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 8px 16px;
+}
+
+.form-agree {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.agree-chkbox {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: 23px;
+    opacity: 0;
+}
+
+.agree-chk-icon {
+    fill: none;
+    margin-right: 8px;
+    border: 1px solid var(--light-slate);
+    border-radius: 2px;
+    transition: 250ms;
+    transition-property: border-color, background-color,fill;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-agree .agree-chkbox:focus + .agree-chk-icon,
+.form-agree .agree-chkbox:checked:focus + .agree-chk-icon {
+    outline: 2px solid #212121;
+}
+
+.form-agree .agree-chkbox:checked + .agree-chk-icon {
+    background-color: var(--iris);
+    border-color: var(--iris);
+    fill: var(--white);
+    outline: none;
+    stroke: var(--white);
+    stroke-width: 0.2;
+}
+.agree-txt {
+    font-size: 12px;
+}
+
+.privacy {
+    text-decoration: underline;
+    color: var(--iris);
+}
+
+.send-btn {
+    padding: 16px 32px;
+    background-color: var(--iris);
+    color: var(--white);
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    border-color: transparent;
+}
+
+.send-btn:hover {
+    cursor: pointer;
+}
+
+/* Menu Section */
 
 .menu-link {
     color: var(--navy-blue);
@@ -163,76 +386,16 @@ ul {
     gap: 40px;
 }
 
-.hero-btn {
-    cursor: pointer;
-    transition-duration: 2s;
-    background-color: var(--iris);
-    border: none;
-    border-radius: 4px;
-    color: var(--white);
-    padding: 16px 32px;
-}
-
-
-.hero-btn:hover {
-    background-color: var(--ocean);
-}
-
-.backdrop {
-    background-color: rgba(46, 47, 66, 0.40);
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal {
-    width: 408px;
-    height: 584px;
-    background-color: var(--dairy);
-    border-radius: 4px;
-    padding: 24px;
-}
-
-.is-hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.close-btn {
-    border-radius: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: var(--cloud);
-    color: var(--navy-blue);
-    width: 30px;
-    height: 30px;
-    margin-left: auto;
-    display: block;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.close-btn:hover {
-    fill: currentColor;
-    border: 1px solid currentColor;
-}
 
 .adv-icon {
     padding: 24px 100px;
 }
 
+/* Team Cards & Socials */
+
 .circle {
     gap: 24px;
 }
-
 
 .teamcard {
     text-align: center;
@@ -250,11 +413,11 @@ ul {
     padding: 5px;
 }
 
-
-
 section {
     padding: 120px 120px;
 }
+
+/* Portfolio Page */
 
 .p-page {
     padding: 0;
